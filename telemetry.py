@@ -46,9 +46,6 @@ for x in range(0, 720, 20):
 pitchscale = pygame.image.load("pitch-roll-indicator.png")
 pitchdisplay = pygame.Surface((118, 118))
 
-# Create surface for roll gimbal
-rolldisplay = None
-
 # Load level indicator
 levelindicator = pygame.image.load("level-indicator.png")
 
