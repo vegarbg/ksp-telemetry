@@ -4,7 +4,9 @@ from serial.tools import list_ports
 from COMPort import COMPort
 
 class COMPortSelectForm(wx.Frame):
-    def __init__(self):
+    def __init__(self, result):
+        self.result = result
+
         # Create non-resizable frame
         wx.Frame.__init__(self, None, title="Select Arduino COM port", style=wx.DEFAULT_FRAME_STYLE^wx.RESIZE_BORDER, size=(200, 135))
         self.Centre()
@@ -27,7 +29,9 @@ class COMPortSelectForm(wx.Frame):
         panel.SetSizer(sizer)
 
     def onClick(self, event):
-        print "You selected: " + self.combobox.GetStringSelection()
+        result = self.combobox.GetClientData(self.combobox.GetSelection())
+        self.result.id = result.id
+        self.result.name = result.name
 
     # Source: http://stackoverflow.com/a/14224477
     @staticmethod
