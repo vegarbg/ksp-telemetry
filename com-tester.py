@@ -11,7 +11,7 @@ if __name__ == "__main__":
     frame = COMPortSelectForm(result)
     frame.Show()
     app.MainLoop()
-    if result:
+    if result and result.id and result.name:
         print result.name
     else:
         print "Failure!"
